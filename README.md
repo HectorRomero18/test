@@ -1,3 +1,4 @@
+activar_servidor.bat
 @echo off
 :: Navegar a la carpeta raíz del proyecto
 cd /d "%~dp0"
@@ -15,8 +16,34 @@ pause
 
 
 
-
-### arrancar
+arrancar_oculto.vbs
 Set WshShell = CreateObject("WScript.Shell")
 WshShell.CurrentDirectory = "C:\Users\marlene.heredia\Desktop\CNEL ANALITYCS"
 WshShell.Run "cmd /c activar_servidor.bat", 0, False
+
+
+
+
+env: 
+
+# Configuración del Servidor de Base de Datos SQL Server
+DB_SERVER=MLGSRVSQL
+DB_NAME=EEMCA
+DB_USER=Consultas
+DB_PASSWORD=Zeus2026
+DB_DRIVER=ODBC Driver 17 for SQL Server
+
+# Seguridad JWT
+SECRET_KEY=d1d7aefde71dce24d8ac62f3ae49cd3192bf6f3cee487ae21273b7060fc5705c
+ALGORITHM=HS256
+ACCESS_TOKEN_EXPIRE_MINUTES=480
+
+
+# --- 2. BASE DE DATOS LOCAL (Usuarios y Roles - ej. PostgreSQL o MySQL) ---
+LOCAL_DB_HOST="localhost"
+LOCAL_DB_PORT="5432"
+LOCAL_DB_NAME="ZEUS"
+LOCAL_DB_USER="postgres"
+LOCAL_DB_PASSWORD="Milagro1"
+
+## La otra contraseña posible es Zeus2026
